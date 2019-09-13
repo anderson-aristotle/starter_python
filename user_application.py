@@ -26,7 +26,7 @@ daily_pct_change = daily_close.__________()
 daily_pct_change.fillna(0, inplace=True)
 
 # Inspect daily returns
-print(______________)
+print(_______)
 
 # Daily log returns
 daily_log_returns = np.log(daily_close.pct_change()+1)
@@ -44,3 +44,9 @@ quarter = aapl.resample("4M").mean()
 
 # Calculate the quarterly percentage change
 quarter.__________()
+
+# Daily returns
+daily_pct_change = ___________ / daily_close.shift(1) - 1
+
+# Print `daily_pct_change`
+print(___________)
