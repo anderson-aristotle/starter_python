@@ -9,6 +9,7 @@ addl_principle = 50
 start_date = (date(2016,1,1))
 
 # algoirthum trading
+# apple - import data source
 # Assign `Adj Close` to `daily_close`
 daily_close = aapl[['___________']]
 
