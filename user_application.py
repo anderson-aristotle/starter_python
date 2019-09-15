@@ -25,9 +25,6 @@ daily_pct_change = daily_close.__________()
 # Replace NA values with 0
 daily_pct_change.fillna(0, inplace=True)
 
-# Inspect daily returns
-print(_______)
-
 # Daily log returns
 daily_log_returns = np.log(daily_close.pct_change()+1)
 
