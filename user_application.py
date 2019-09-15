@@ -50,3 +50,12 @@ daily_pct_change = ___________ / daily_close.shift(1) - 1
 
 # Print `daily_pct_change`
 print(___________)
+# In [1]:
+import configparser  # 1 
+import oandapy as opy  # 2
+
+config = configparser.ConfigParser()  # 3
+config.read('oanda.cfg')  # 4
+
+oanda = opy.API(environment='practice',
+                access_token=config['oanda']['access_token'])  # 5
