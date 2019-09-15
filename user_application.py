@@ -2,11 +2,6 @@ import pandas as pd
 import numpy as np
 from datetime import date
 
-interest_rate = 0.04
-years = 30
-payments_year = 12
-addl_principle = 50
-start_date = (date(2016,1,1))
 
 # algoirthum trading
 # apple - import data source
