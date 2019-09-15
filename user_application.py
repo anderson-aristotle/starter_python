@@ -27,8 +27,6 @@ print(daily_log_returns)
 # Resample `aapl` to business months, take last observation as value 
 monthly = aapl._________('BM').apply(lambda x: x[-1])
 
-# Calculate the monthly percentage change
-monthly.pct_change()
 
 # Resample `aapl` to quarters, take the mean as value per quarter
 quarter = aapl.resample("4M").mean()
