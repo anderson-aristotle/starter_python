@@ -180,3 +180,11 @@ def insert_node(node,data):
     h1 = my_max(getheight(node.getright()),getheight(node.getleft())) + 1
     node.setheight(h1)
     return node
+    def getRightMost(root):
+        while root.getright() is not None:
+        root = root.getright()
+    return root.getdata()
+def getLeftMost(root):
+    while root.getleft() is not None:
+        root = root.getleft()
+    return root.getdata()
