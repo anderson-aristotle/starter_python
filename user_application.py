@@ -273,4 +273,7 @@ def getLeftMost(root):
         print()
         print("*************************************")
         return
-
+        def test(self):
+            getheight(None)
+        print("****")
+        self.getheight()
