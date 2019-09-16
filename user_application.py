@@ -282,3 +282,6 @@ def getLeftMost(root):
     t.traversale()
     l = list(range(10))
     random.shuffle(l)
+    for i in l:
+        t.insert(i)
+        t.traversale()
