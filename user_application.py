@@ -277,3 +277,8 @@ def getLeftMost(root):
             getheight(None)
         print("****")
         self.getheight()
+        if __name__ == "__main__":
+        t = AVLtree()
+    t.traversale()
+    l = list(range(10))
+    random.shuffle(l)
