@@ -106,3 +106,38 @@ def my_max(a,b):
     if a > b:
         return a
     return b
+    def leftrotation(node):
+        r'''
+            A                      B
+           / \                    / \
+          B   C                  Bl  A
+         / \       -->          /   / \
+        Bl  Br                 UB Br  C
+       /
+     UB
+  
+    UB = unbalanced node  
+    '''
+    print("left rotation node:",node.getdata())
+    ret = node.getleft()
+    node.setleft(ret.getright())
+    ret.setright(node)
+    h1 = my_max(getheight(node.getright()),getheight(node.getleft())) + 1
+    node.setheight(h1)
+    h2 = my_max(getheight(ret.getright()),getheight(ret.getleft())) + 1         
+    ret.setheight(h2)
+    return ret
+
+def rightrotation(node):
+    '''
+        a mirror symmetry rotation of the leftrotation
+    '''
+    print("right rotation node:",node.getdata())
+    ret = node.getright()
+    node.setright(ret.getleft())
+    ret.setleft(node)
+    h1 = my_max(getheight(node.getright()),getheight(node.getleft())) + 1
+    node.setheight(h1)
+    h2 = my_max(getheight(ret.getright()),getheight(ret.getleft())) + 1         
+    ret.setheight(h2)
+    return ret
