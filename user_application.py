@@ -141,3 +141,42 @@ def rightrotation(node):
     h2 = my_max(getheight(ret.getright()),getheight(ret.getleft())) + 1         
     ret.setheight(h2)
     return ret
+def rlrotation(node):
+    r'''
+            A              A                    Br      
+           / \            / \                  /  \
+          B   C    RR    Br  C       LR       B    A
+         / \       -->  /  \         -->    /     / \
+        Bl  Br         B   UB              Bl    UB  C  
+             \        /
+             UB     Bl
+    RR = rightrotation   LR = leftrotation
+    '''
+    node.setleft(rightrotation(node.getleft()))
+    return leftrotation(node)
+
+def lrrotation(node):
+    node.setright(leftrotation(node.getright()))
+    return rightrotation(node)
+
+
+def insert_node(node,data):
+    if node is None:
+        return my_node(data)
+    if data < node.getdata():
+        node.setleft(insert_node(node.getleft(),data))
+        if getheight(node.getleft()) - getheight(node.getright()) == 2: #an unbalance detected
+            if data < node.getleft().getdata():       #new node is the left child of the left child
+                node = leftrotation(node)
+            else:
+                node = rlrotation(node)             #new node is the right child of the left child
+    else:
+        node.setright(insert_node(node.getright(),data))
+        if getheight(node.getright()) - getheight(node.getleft()) == 2:
+            if data < node.getright().getdata():
+                node = lrrotation(node)
+            else:
+                node = rightrotation(node)
+    h1 = my_max(getheight(node.getright()),getheight(node.getleft())) + 1
+    node.setheight(h1)
+    return node
