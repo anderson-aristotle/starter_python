@@ -285,3 +285,7 @@ def getLeftMost(root):
     for i in l:
         t.insert(i)
         t.traversale()
+        random.shuffle(l)
+    for i in l:
+        t.del_node(i)
+        t.traversale()
