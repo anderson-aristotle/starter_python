@@ -102,9 +102,9 @@ def getheight(node):
         return 0
     return node.getheight()
 
-def my_max(a,b):
-    if a > b:
-        return a
+# def my_max(a,b):
+#     if a > b:
+#         return a
     return b
     def leftrotation(node):
         r'''
