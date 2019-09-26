@@ -71,9 +71,8 @@ class my_queue:
         print(self.data[self.head:self.tail])
         
 # class my_node:
-        
-        self.le ft = None
-        self.right = None
+#      self.le ft = None
+       self.right = None
         self.height = 1
     def getdata(self):
         return self.data
